@@ -1,6 +1,3 @@
-# fanarttv [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> favarttv api wrapper
-
 ## Installation
 
 ```sh
@@ -10,18 +7,47 @@ $ npm install --save fanarttv
 ## Usage
 
 ```js
-var fanarttv = require('fanarttv');
+var fanarttvAPI = require('fanarttv');
+var fanarttv = new fanarttvAPI('API_KEY');
 
-fanarttv('Rainbow');
+
+fanarttv.getImagesForMovie(10195, function(err,res) {
+	console.log(res);
+});
+
+fanarttv.latestMovies(function(err,res) {
+	console.log(res);
+});
+
+fanarttv.getImagesForTVShow(75682, function(err,res) {
+	console.log(res);
+});
+
+fanarttv.latestTVShows(function(err,res) {
+	console.log(res);
+});
+
+fanarttv.getImagesForArtist('f4a31f0a-51dd-4fa7-986d-3095c40c5ed9', function(err,res) {
+	console.log(res);
+});
+
+fanarttv.getImagesForAlbum('9ba659df-5814-32f6-b95f-02b738698e7c', function(err,res) {
+	console.log(res);
+});
+
+fanarttv.getImagesForAlbum('9ba659df-5814-32f6-b95f-02b738698e7c', function(err,res) {
+	console.log(res);
+});
+
+fanarttv.getImagesForLabel('e832b688-546b-45e3-83e5-9f8db5dcde1d', function(err,res) {
+	console.log(res);
+});
+
+fanarttv.getLatestArtists(function(err,res) {
+	console.log(res);
+});
+
 ```
 ## License
 
 MIT © [Dvir Hazout]()
-
-
-[npm-image]: https://badge.fury.io/js/fanarttv.svg
-[npm-url]: https://npmjs.org/package/fanarttv
-[travis-image]: https://travis-ci.org/dvh91/fanarttv.svg?branch=master
-[travis-url]: https://travis-ci.org/dvh91/fanarttv
-[daviddm-image]: https://david-dm.org/dvh91/fanarttv.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/dvh91/fanarttv
